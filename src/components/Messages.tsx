@@ -161,7 +161,7 @@ export default function MessagesTab({ currentUser, onOpenProfile }: MessagesTabP
         />
 
 
-    <div className="messages-tab-container" style={{ paddingTop:"2rem", minHeight:"calc(100vh - 2rem)", display: 'flex', width: "85%", borderLeft:"1px solid #ccc" }}>
+    <div className="messages-tab-container" style={{ paddingTop:"2rem", minHeight:"calc(100vh - 2rem)", display: 'flex', width: "90%", borderLeft:"1px solid #ccc" }}>
 
       <div
         className="conversations-list"
