@@ -63,7 +63,7 @@ export default function Profile({currentUser, profileUser, handleUpdate, isOther
  
     const fetchUserPosts = async () => {
       try {
-        const res = await fetch(`http://localhost:4000/api/posts`);
+        const res = await fetch(`https://trenchsocial-backend.onrender.com/api/posts`);
         if (res.ok) {
           const data = await res.json();
           if(profileUser){
@@ -94,7 +94,7 @@ export default function Profile({currentUser, profileUser, handleUpdate, isOther
 
   const handleDeletePost = async (postId: string) => {
     try {
-      const res = await fetch(`http://localhost:4000/api/posts/${postId}`, {
+      const res = await fetch(`https://trenchsocial-backend.onrender.com/api/posts/${postId}`, {
         method: "DELETE",
       });
 
@@ -132,7 +132,7 @@ export default function Profile({currentUser, profileUser, handleUpdate, isOther
 
   const handleFollow = async () => {
     try {
-      const res = await fetch(`http://localhost:4000/api/users/${profileUser!.username}/follow`, {
+      const res = await fetch(`https://trenchsocial-backend.onrender.com/api/users/${profileUser!.username}/follow`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -159,7 +159,7 @@ export default function Profile({currentUser, profileUser, handleUpdate, isOther
 
   const handleUnfollow = async () => {
     try {
-      const res = await fetch(`http://localhost:4000/api/users/${profileUser!.username}/unfollow`, {
+      const res = await fetch(`https://trenchsocial-backend.onrender.com/api/users/${profileUser!.username}/unfollow`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -199,7 +199,7 @@ export default function Profile({currentUser, profileUser, handleUpdate, isOther
     }
 
     try {
-      const res = await fetch("http://localhost:4000/api/messages", {
+      const res = await fetch("https://trenchsocial-backend.onrender.com/api/messages", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

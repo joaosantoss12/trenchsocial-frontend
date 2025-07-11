@@ -52,7 +52,7 @@ const [socket, setSocket] = useState<ReturnType<typeof io> | null>(null);
   const toggleChat = () => setIsOpen(!isOpen);
 
    useEffect(() => {
-    const socket = io("http://localhost:4000");
+    const socket = io("https://trenchsocial-backend.onrender.com/");
     setSocket(socket);
 
     socket.on("loadMessages", (loadedMessages: Message[]) => {

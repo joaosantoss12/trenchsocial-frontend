@@ -67,7 +67,7 @@ export default function RightSideHome({ isGuest, currentUser, handleOpenProfile 
   useEffect(() => {    
     async function fetchPosts() {
       try {
-        const res = await fetch("http://localhost:4000/api/posts"); 
+        const res = await fetch("https://trenchsocial-backend.onrender.com/api/posts"); 
         if (!res.ok) throw new Error("Failed to fetch posts");
 
         const data = await res.json();
@@ -87,7 +87,7 @@ export default function RightSideHome({ isGuest, currentUser, handleOpenProfile 
     const newPost: Post = { id: uuidv4(), name, username, imageURL, text, createdAt, likes: [], retruths: [], comments: [], images, verified: currentUser?.verified || false };
 
     try {
-      const res = await fetch("http://localhost:4000/api/posts", {
+      const res = await fetch("https://trenchsocial-backend.onrender.com/api/posts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newPost),
@@ -129,7 +129,7 @@ export default function RightSideHome({ isGuest, currentUser, handleOpenProfile 
     if (isGuest) return;
 
     try {
-      const res = await fetch(`http://localhost:4000/api/posts/${postId}`, {
+      const res = await fetch(`https://trenchsocial-backend.onrender.com/api/posts/${postId}`, {
         method: "DELETE",
       });
 
@@ -173,7 +173,7 @@ export default function RightSideHome({ isGuest, currentUser, handleOpenProfile 
     const hasLiked = post.likes.some(u => u.id === currentUser!.id);
 
     try {
-      const res = await fetch(`http://localhost:4000/api/posts/${postId}/like`, {
+      const res = await fetch(`https://trenchsocial-backend.onrender.com/api/posts/${postId}/like`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId: currentUser!.id, unlike: hasLiked })
@@ -201,7 +201,7 @@ export default function RightSideHome({ isGuest, currentUser, handleOpenProfile 
 
 
     try {
-      const res = await fetch(`http://localhost:4000/api/posts/${postId}/retruth`, {
+      const res = await fetch(`https://trenchsocial-backend.onrender.com/api/posts/${postId}/retruth`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId: currentUser.id, unretruth: hasRetruth })
@@ -235,7 +235,7 @@ export default function RightSideHome({ isGuest, currentUser, handleOpenProfile 
     };
 
     try {
-      const res = await fetch(`http://localhost:4000/api/posts/${postId}/comments`, {
+      const res = await fetch(`https://trenchsocial-backend.onrender.com/api/posts/${postId}/comments`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newComment),
@@ -283,7 +283,7 @@ export default function RightSideHome({ isGuest, currentUser, handleOpenProfile 
     if (isGuest) return;
 
     try {
-      const res = await fetch(`http://localhost:4000/api/posts/${postId}/comments/${commentId}`, {
+      const res = await fetch(`https://trenchsocial-backend.onrender.com/api/posts/${postId}/comments/${commentId}`, {
         method: "DELETE",
       });
 
@@ -338,7 +338,7 @@ export default function RightSideHome({ isGuest, currentUser, handleOpenProfile 
     const alreadyLiked = comment.likes.some(u => u.id === currentUser!.id);
 
     try {
-      const res = await fetch(`http://localhost:4000/api/posts/${postId}/comments/${commentId}/like`, {
+      const res = await fetch(`https://trenchsocial-backend.onrender.com/api/posts/${postId}/comments/${commentId}/like`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId: currentUser!.id, unlike: alreadyLiked })

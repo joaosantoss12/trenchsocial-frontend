@@ -64,7 +64,7 @@ export default function MessagesTab({ currentUser, onOpenProfile }: MessagesTabP
   useEffect(() => {
     async function fetchConversations() {
       try {
-        const res = await fetch(`http://localhost:4000/api/messages/conversations/${currentUser.id}`);
+        const res = await fetch(`https://trenchsocial-backend.onrender.com/api/messages/conversations/${currentUser.id}`);
         if (!res.ok) throw new Error('Failed to fetch conversations');
         const data = await res.json();
         setConversations(data);
@@ -86,7 +86,7 @@ export default function MessagesTab({ currentUser, onOpenProfile }: MessagesTabP
 
     async function fetchMessages() {
       try {
-        const res = await fetch(`http://localhost:4000/api/messages/between/${currentUser.id}/${selectedConversation?.userId}`);
+        const res = await fetch(`https://trenchsocial-backend.onrender.com/api/messages/between/${currentUser.id}/${selectedConversation?.userId}`);
         if (!res.ok) throw new Error('Failed to fetch messages');
         const data = await res.json();
         setMessages(data);
@@ -105,7 +105,7 @@ export default function MessagesTab({ currentUser, onOpenProfile }: MessagesTabP
     }
 
     try {
-      const res = await fetch("http://localhost:4000/api/messages", {
+      const res = await fetch("https://trenchsocial-backend.onrender.com/api/messages", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -126,7 +126,7 @@ export default function MessagesTab({ currentUser, onOpenProfile }: MessagesTabP
       setNewMessage('');
 
       if (selectedConversation) {
-        const resMessages = await fetch(`http://localhost:4000/api/messages/between/${currentUser.id}/${selectedConversation.userId}`);
+        const resMessages = await fetch(`https://trenchsocial-backend.onrender.com/api/messages/between/${currentUser.id}/${selectedConversation.userId}`);
         if (resMessages.ok) {
           const data = await resMessages.json();
           setMessages(data);

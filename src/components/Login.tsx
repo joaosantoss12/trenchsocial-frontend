@@ -51,7 +51,7 @@ export default function LoginPopup({ onLogin, onRegister, onGuestJoin }: Props) 
   e.preventDefault();
 
   if (resetPasswordMode && resetToken) {
-    const res = await fetch("http://localhost:4000/api/auth/reset-password", {
+    const res = await fetch("https://trenchsocial-backend.onrender.com/api/auth/reset-password", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ token: resetToken, password: newPassword }),
@@ -78,7 +78,7 @@ export default function LoginPopup({ onLogin, onRegister, onGuestJoin }: Props) 
   if (registerMode && onRegister) {
 
     if (!awaitingCode) {
-      const rsp = await fetch("http://localhost:4000/api/auth/send-code", {
+      const rsp = await fetch("https://trenchsocial-backend.onrender.com/api/auth/send-code", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email })
@@ -94,7 +94,7 @@ export default function LoginPopup({ onLogin, onRegister, onGuestJoin }: Props) 
     }
 
     if (awaitingCode) {
-      const rsp = await fetch("http://localhost:4000/api/auth/verify-code", {
+      const rsp = await fetch("https://trenchsocial-backend.onrender.com/api/auth/verify-code", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, code: verificationCode })
@@ -133,7 +133,7 @@ export default function LoginPopup({ onLogin, onRegister, onGuestJoin }: Props) 
 };
 
 const onForgotPassword = async (email: string) => {
-  const rsp = await fetch("http://localhost:4000/api/auth/forgot-password", {
+  const rsp = await fetch("https://trenchsocial-backend.onrender.com/api/auth/forgot-password", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email }),

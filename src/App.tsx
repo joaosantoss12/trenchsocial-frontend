@@ -102,7 +102,7 @@ const handleGuestJoin = () => {
 
 const handleRegister = async (email: string, password: string, name: string, username: string) => {
   try {
-    const response = await fetch("http://localhost:4000/api/users/register", {
+    const response = await fetch("https://trenchsocial-backend.onrender.com/api/users/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password, name, username }),
@@ -167,7 +167,7 @@ const handleUpdateProfile = async (updatedData: { name: string; email: string; i
       formData.append("image", imageFile);
     }
 
-    const res = await fetch(`http://localhost:4000/api/users/${currentUser.id}`, {
+    const res = await fetch(`https://trenchsocial-backend.onrender.com/api/users/${currentUser.id}`, {
       method: "PUT",
       body: formData,
     });
@@ -218,7 +218,7 @@ const handleUpdateProfile = async (updatedData: { name: string; email: string; i
 
 const getUser = async (userId: string): Promise<User | null> => {
   try {
-    const res = await fetch(`http://localhost:4000/api/users/${userId}`);
+    const res = await fetch(`https://trenchsocial-backend.onrender.com/api/users/${userId}`);
     if (!res.ok) {
       throw new Error("Failed to fetch user");
     }
@@ -234,7 +234,7 @@ const getUser = async (userId: string): Promise<User | null> => {
 const handleOpenProfile = async (username: string) => {
 
   try {
-    const res = await fetch(`http://localhost:4000/api/users/username/${username}`);
+    const res = await fetch(`https://trenchsocial-backend.onrender.com/api/users/username/${username}`);
 
     if (!res.ok) {
       toast.error("Failed to load profile!", {
@@ -274,7 +274,7 @@ const handleOpenProfile = async (username: string) => {
 const handleLogin = async (email: string, password: string) => {
   
     try {
-        const res = await fetch("http://localhost:4000/api/users/login", {
+        const res = await fetch("https://trenchsocial-backend.onrender.com/api/users/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, password })
@@ -380,7 +380,7 @@ const saveReport = async (type:string, message:string) => {
   };
 
 
-  const res = await fetch("http://localhost:4000/api/reports", {
+  const res = await fetch("https://trenchsocial-backend.onrender.com/api/reports", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(newReport),

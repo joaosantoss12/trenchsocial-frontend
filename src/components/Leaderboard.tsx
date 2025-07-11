@@ -21,27 +21,27 @@ export default function Leaderboard({ handleOpenProfile, changetoProfileTab }: L
   useEffect(() => {
     async function fetchLeaderboards() {
       try {
-        let res = await fetch("http://localhost:4000/api/posts/most-liked");
+        let res = await fetch("https://trenchsocial-backend.onrender.com/api/posts/most-liked");
         if (!res.ok) throw new Error("Failed to fetch most liked posts");
         let data = await res.json();
         setMostLiked(data);
 
-        res = await fetch("http://localhost:4000/api/posts/most-retruths");
+        res = await fetch("https://trenchsocial-backend.onrender.com/api/posts/most-retruths");
         if (!res.ok) throw new Error("Failed to fetch most retruthed posts");
         data = await res.json();
         setMostRetruhted(data);
 
-        res = await fetch("http://localhost:4000/api/users/most-followers");
+        res = await fetch("https://trenchsocial-backend.onrender.com/api/users/most-followers");
         if (!res.ok) throw new Error("Failed to fetch most followers");
         data = await res.json();
         setMostFollowers(data);
 
-        res = await fetch("http://localhost:4000/api/users/most-contributions");
+        res = await fetch("https://trenchsocial-backend.onrender.com/api/users/most-contributions");
         if (!res.ok) throw new Error("Failed to fetch most contributions");
         data = await res.json();
         setMostContributions(data);
 
-        res = await fetch("http://localhost:4000/api/users/most-posts");
+        res = await fetch("https://trenchsocial-backend.onrender.com/api/users/most-posts");
         if (!res.ok) throw new Error("Failed to fetch most posts");
         data = await res.json();
         setMostPosts(data);

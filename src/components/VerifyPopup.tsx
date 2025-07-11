@@ -64,7 +64,7 @@ export default function VerifyPopup({ onClose, currentUser }: Props) {
         toast.success("✅ Verified payment sent successfully!");
 
         // Call backend to mark user as verified
-        const res = await fetch(`http://localhost:4000/api/users/verify/${currentUser.username}`, {
+        const res = await fetch(`https://trenchsocial-backend.onrender.com/api/users/verify/${currentUser.username}`, {
         method: "PATCH",
         });
 

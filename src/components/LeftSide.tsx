@@ -94,7 +94,7 @@ export default function LeftSide({ onTabChange, onLogout, saveReport, isGuest, s
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await fetch("http://localhost:4000/api/users");
+        const res = await fetch("https://trenchsocial-backend.onrender.com/api/users");
 
         if (!res.ok) {
           toast.error("Failed to load users for search engine! Please refresh the page", {

@@ -7,7 +7,7 @@ export default function ResetPassword() {
   const [newPassword, setNewPassword] = useState("");
 
   const handleReset = async () => {
-    const rsp = await fetch("http://localhost:4000/api/auth/reset-password", {
+    const rsp = await fetch("https://trenchsocial-backend.onrender.com/api/auth/reset-password", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ token, password: newPassword }),
