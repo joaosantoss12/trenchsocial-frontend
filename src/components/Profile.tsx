@@ -455,18 +455,21 @@ export default function Profile({currentUser, profileUser, handleUpdate, isOther
           {/* --- TAB BUTTONS --- */}
           <div className="tab-buttons">
             <button
+              style={{color:"white"}}
               className={`tab-btn ${activeTab === "posts" ? "active" : ""}`}
               onClick={() => setActiveTab("posts")}
             >
               Posts
             </button>
             <button
+              style={{color:"white"}}
               className={`tab-btn ${activeTab === "followers" ? "active" : ""}`}
               onClick={() => setActiveTab("followers")}
             >
               Followers
             </button>
             <button
+              style={{color:"white"}}
               className={`tab-btn ${activeTab === "following" ? "active" : ""}`}
               onClick={() => setActiveTab("following")}
             >
