@@ -147,7 +147,7 @@ export default function Livestreams() {
                 </a>
               </div>
               <iframe
-                src={`https://player.twitch.tv/?channel=${streamer}&parent=trenchsocial-backend.onrender.com${
+                src={`https://player.twitch.tv/?channel=${streamer}&parent=trenchsocial-frontend.vercel.app${
                   index === 0 ? "&autoplay=true" : "&autoplay=false"
                 }`}
                 height="500"
