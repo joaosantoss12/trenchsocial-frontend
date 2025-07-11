@@ -235,7 +235,7 @@ export default function MessagesTab({ currentUser, onOpenProfile }: MessagesTabP
                 cursor: 'pointer',
                 userSelect: 'none',
               }}
-              onClick={() => onOpenProfile(selectedConversation.userName)}
+              onClick={() => onOpenProfile(selectedConversation.userUsername)}
               title={`Open profile of ${selectedConversation.userName}`}
             >
               {selectedConversation.userName}
