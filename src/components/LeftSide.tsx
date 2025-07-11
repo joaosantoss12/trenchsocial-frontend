@@ -245,9 +245,8 @@ export default function LeftSide({ onTabChange, onLogout, saveReport, isGuest, s
           className={`messages ${isGuest ? "soon" : ""} ${selectedTab == 'messages' ? 'selected' : ''}`}
           onClick={!isGuest ? () => {setViewedProfileNull(); handleTabChange('messages')} : () => {}}
         >
-          <span style={{ position: "relative", display: "inline-block" }}>
             {TABS[1].icon}
-          </span>
+
           <span>{TABS[1].label}</span>
         </a>
 
