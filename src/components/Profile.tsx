@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import VerifyPopup from "./VerifyPopup";
 
@@ -37,7 +37,7 @@ type Post = {
 type props = {
   currentUser: User;
   profileUser?: User | null;
-  handleUpdate: (updatedData: { name: string; email: string; imageFile?: File }) => Promise<void>;
+  handleUpdate?: (updatedData: { name: string; email: string; imageFile?: File }) => Promise<void>;
   isOtherUser?: boolean;
   isGuest: boolean;
   onTabChange?: (tab: "home" | "profile" | "live" | "leaderboard" | "settings") => void;

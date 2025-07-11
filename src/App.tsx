@@ -1,6 +1,6 @@
 import './App.css'
 
-import { use, useEffect, useState } from 'react'
+import { useState } from 'react'
 
 import LeftSide from './components/LeftSide'
 import RightSideHome from './components/MainScreen'
@@ -424,7 +424,7 @@ const renderRightComponent = () => {
         <Profile
           currentUser={(isGuest ? viewedProfileUser : currentUser)}
           profileUser={viewedProfileUser}
-          handleUpdate={() => {}}
+          handleUpdate={undefined}
           isOtherUser
           isGuest={isGuest}
           onTabChange={setActiveTab}
@@ -450,7 +450,7 @@ const renderRightComponent = () => {
       case 'messages':
         return <MessagesTab currentUser={currentUser} onOpenProfile={handleOpenProfile} />
       default:
-        return <RightSideHome isGuest={isGuest} currentUser={currentUser} />
+        return <RightSideHome isGuest={isGuest} currentUser={currentUser} handleOpenProfile={handleOpenProfile} />
   }
 }
 
