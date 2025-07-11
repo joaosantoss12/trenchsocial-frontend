@@ -81,6 +81,8 @@ export default function Livestreams() {
     });
   };
 
+  const parentDomain = "trenchsocial-frontend.vercel.app";
+
   return (
     <div className="stream-side">
       <div className="main-div">
@@ -147,7 +149,7 @@ export default function Livestreams() {
                 </a>
               </div>
               <iframe
-                src={`https://player.twitch.tv/?channel=${streamer}&parent=trenchsocial-frontend.vercel.app${
+                src={`https://player.twitch.tv/?channel=${streamer}&parent=${parentDomain}${
                   index === 0 ? "&autoplay=true" : "&autoplay=false"
                 }`}
                 height="500"
