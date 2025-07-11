@@ -1,0 +1,149 @@
+* {
+  background-color: white;
+}
+
+div.stream-side {
+  border-left: 1px solid rgba(0, 0, 0, 0.208);  
+  height: calc(100vh - 2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  width: 100%;
+  color:black;
+}
+
+div.stream-side .main-div{
+    width: 85%;
+}
+
+div.stream-side span.title {
+  font-size: 1.5vw;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  background-color: white;
+  margin-bottom:1.5rem;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+  width: 65%;
+}
+
+
+
+
+.add-streamer {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.add-streamer input {
+  flex: 1;
+  padding: 8px;
+  background-color: #ffffff;
+  border: 1px solid #333333;
+  color: rgb(0, 0, 0);
+  border-radius: 4px;
+}
+
+.add-streamer input:focus {
+  outline: 1px solid #5548EF;
+  border: none;
+}
+
+.add-streamer button {
+  background-color: #5548ef;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  display: flex;
+}
+
+.add-streamer button:hover {
+  background-color: #2d1e67;
+}
+
+.streams-container {
+  display: grid;
+  gap: 0.8%;
+  margin-top: 1rem;
+}
+
+.columns-1 {
+  grid-template-columns: 1fr;
+}
+
+.columns-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.stream-wrapper {
+  position: relative;
+  background-color: #09024e;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.stream-info {
+  margin-bottom: 5px;
+  font-weight: bold;
+  background-color: #09024e;;
+
+  font-family: 'Arial', sans-serif;
+  font-size: 1vw;
+}
+
+.stream-info a{
+    background-color: transparent;
+    color: white;
+    padding: 0.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.column-buttons button {
+  background-color: #555;
+  color: white;
+  border: 1px solid black;
+  padding: 5px 10px;
+  margin-left: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.column-buttons button.active {
+  background-color: #5548ef;
+}
+
+
+.remove-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  font-size: 1.2vw;
+  cursor: pointer;
+  color: #ff4d4f;
+}
+
+
+@media screen and (max-width: 1300px) {
+  .columns-2 {
+    grid-template-columns: 1fr;
+  }
+    
+}
+
+
+iframe{
+    border:none;
+}

@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0d1117;
+  color: white;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.post {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
