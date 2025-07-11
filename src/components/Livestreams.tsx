@@ -81,7 +81,7 @@ export default function Livestreams() {
     });
   };
 
-  const parentDomain = "trenchsocial-frontend.vercel.app";
+  const parentDomain = "trenchsocial.xyz";
 
   return (
     <div className="stream-side">
