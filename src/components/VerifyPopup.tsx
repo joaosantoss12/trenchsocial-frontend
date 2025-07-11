@@ -178,7 +178,7 @@ export default function VerifyPopup({ onClose, currentUser }: Props) {
             fontSize: "1rem",
           }}
         >
-          Connect Phantom & Pay 0.2 SOL
+          Connect Phantom & Pay 0.1 SOL
         </button>
 
         <p style={{ fontSize: "0.8vw", marginTop: "1rem", color: "#666" }}>
