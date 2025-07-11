@@ -68,6 +68,7 @@ export default function MessagesTab({ currentUser, onOpenProfile }: MessagesTabP
         if (!res.ok) throw new Error('Failed to fetch conversations');
         const data = await res.json();
         setConversations(data);
+        console.log(data);
         if (data.length > 0 && !selectedConversation) {
           setSelectedConversation(data[0]);
         }
