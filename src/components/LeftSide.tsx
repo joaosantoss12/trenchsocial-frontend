@@ -247,7 +247,6 @@ export default function LeftSide({ onTabChange, onLogout, saveReport, isGuest, s
         >
           <span style={{ position: "relative", display: "inline-block" }}>
             {TABS[1].icon}
-            <div style={{ position: "absolute", top: "-0.25rem", right: "-0.5rem", width: "0.5rem", height: "0.5rem", borderRadius: "9999px", backgroundColor: "#ef4444", boxShadow: "0 0 0 2px white" }} />
           </span>
           <span>{TABS[1].label}</span>
         </a>
